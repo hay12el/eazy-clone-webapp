@@ -1,0 +1,58 @@
+.resContainer {
+    display: flex;
+    flex-direction: column;
+    direction: rtl;
+    gap: 15px;
+    padding: 25px;
+    background-color: RGB(237, 245, 247);
+    border-radius: 20px 20px 0px 0px;
+}
+.RBICONCONT {
+    position: relative;
+}
+
+.RminiInfoLeft {
+    display: flex;
+    direction: rtl;
+    flex-direction: column;
+    
+}
+
+.RminiInfo {
+    background-color: #fff;
+    display: flex;
+    flex-direction: row;
+    direction: rtl;
+    align-items: center;
+    box-shadow: 1px 1px 8px #8888889c;
+    padding: 10px;
+    padding-left: 30px;
+    width: 28%;
+    min-width: max-content;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.RminiInfoLeft > p {
+    margin: 3px 0px;
+}
+
+#RBIcon {
+    background-color: rgb(192, 102, 102);
+    margin: 10px;
+    height: 90px;
+    margin-right: 0px;
+    width: 90px;
+    border-radius: 100%;
+    border-width: 4px;
+    border-color: black;
+}
+
+#RBName {
+    font-weight: bold;
+    font-size: 23px;
+}
+
+#RminiAddress {
+    color: RGB(117, 116, 116);
+}

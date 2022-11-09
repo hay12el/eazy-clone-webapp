@@ -1,0 +1,38 @@
+.lContainer{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.inpC{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: space-between;
+    align-items: space-between;
+}
+
+.inp{
+    height: 30px;
+    padding: 10px;
+    text-align: right;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 0 0 0.3em 0.2em rgba(0, 0, 0, 0.082);
+}
+
+.inp::placeholder{
+    text-align: right;
+}
+
+.confirmBtn{
+    height: 50px;
+    border: none;
+    padding: 10px 20px;
+    background-color: #0071c2;
+    color:white;
+    cursor: pointer;
+    border-radius: 5px;
+}

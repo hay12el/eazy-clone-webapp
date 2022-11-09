@@ -1,0 +1,31 @@
+.OpenContainer {
+    padding: 10px 0px 0px 0px;
+    position: relative;
+}
+
+.button {
+    display: flex;
+    align-items: center;
+    width: max-content;
+    padding: 5px;
+    border: 1px solid rgb(194, 194, 194);
+    cursor: pointer;
+    font-size: 14px;
+    direction: rtl;
+    gap: 3px;
+    border-radius: 5px;
+}
+
+.button > p {
+    margin: 5px 0px;
+}
+
+.hoursCont {
+    position: absolute;
+    background-color: rgb(255, 255, 255);
+    width: 100px;
+    font-size: 14px;
+    border: 1px solid rgb(241, 241, 241);
+    padding: 0px 10px;
+    transition: 0.3ms;
+}
