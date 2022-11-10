@@ -15,6 +15,7 @@ const MyRoutes = () => {
       <Route path="/signin" element={<Signin />} />
       <Route path="adminPanel" element={<AdminPanel/>}/>
       <Route path="business/:id" element={<BusinessPage/>}/>
+      
     </Routes>
   );
 };
