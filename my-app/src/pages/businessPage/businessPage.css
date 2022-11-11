@@ -94,21 +94,32 @@
 
 
 @media only screen and (max-width: 600px) {
+    .BContainer{
+        height: 1000px;
+        min-height: max-content;
+    }
     .BBContainer {
-        flex-direction:column-reverse;
-        background-color: rgb(124, 139, 255);
-        flex-wrap: wrap;
+        flex-direction:column-reverse;   
     }
     #description {
         padding: 0px 10px;
     }
-    .info {
+    .photos {
+        align-items: center;
         justify-content: center;
+    }
+    .info {
+        align-items: center;
+        justify-content: center;
+        min-height: max-content;
     }
     .miniInfo {
         flex-direction: column;
     }
     .miniInfoLeft {
         text-align: center;
+    }
+    .BIcons {
+        justify-content: center;
     }
   }

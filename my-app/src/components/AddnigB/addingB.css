@@ -47,8 +47,9 @@
 .double > select {
     border: 2px solid RGB(0, 161, 214);
     border-radius: 5px;
-    height: 30px;
+    height: 35px;
     min-width: max-content;
+    width: 170px;
     text-overflow:clip;
 }
 

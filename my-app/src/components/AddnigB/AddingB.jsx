@@ -1,18 +1,19 @@
 import React from "react";
 import { useState } from "react";
 import "./addingB.css";
-// import cities from "../cities.json";
+// import cities from "../cities";
 
 function AddingB(props) {
-    
+  const [options, setOptions] = useState([]);
+
   return (
-    <div className="AddingContainer" style={{visibility: props.visi}}>
+    <div className="AddingContainer" style={{ display: props.visi }}>
       <div className="AddTitle">
         <p
           style={{
             fontSize: "26px",
-            margin: '10px',
-            color: 'white'
+            margin: "10px",
+            color: "white",
           }}
         >
           הוספת עסק חדש
@@ -26,13 +27,7 @@ function AddingB(props) {
           </div>
           <div className="double">
             <p>מייל העסק:</p>
-            <input
-              type="email"
-              id="email"
-              pattern=".+@globex\.com"
-              size="30"
-              required
-            />
+            <input type="email" id="email" pattern=".+@globex\.com" required />
           </div>
           <div className="double">
             <p>טלפון העסק:</p>
@@ -40,7 +35,12 @@ function AddingB(props) {
           </div>
           <div className="double">
             <p>סוג העסק:</p>
-            <input type="text" id="type" />
+            <select name="type" id="type">
+              <option value="volvo">מספרה</option>
+              <option value="saab">שיזוף</option>
+              <option value="mercedes">מניקור</option>
+              <option value="audi">תסרוקות</option>
+            </select>
           </div>
         </div>
         <div>
@@ -56,8 +56,8 @@ function AddingB(props) {
             </select>
           </div>
           <div className="double">
-            <p>רחוב</p>
-            <input type="text" id="street" />
+            <p>רחוב:</p>
+            <input type="text" id="street" required />
           </div>
         </div>
       </form>

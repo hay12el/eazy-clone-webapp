@@ -17,7 +17,6 @@ const Login = () => {
     if (localStorage.getItem('token') !== null) {
       navigate("/");
     }
-    console.log(user);
   }, []);
 
   const [inputs, setInputs] = useState({
@@ -31,6 +30,12 @@ const Login = () => {
       [e.target.id]: e.target.value,
     }));
   };
+
+  const handleClick = (e) => {
+    if(e.key == 'Enter'){
+      handleSubmit();
+    }
+  }
 
   const handleSubmit = async () => {
     try {
@@ -61,6 +66,7 @@ const Login = () => {
           placeholder="מייל"
           id="email"
           onChange={handleChange}
+          onKeyDown={handleClick}
         />
         <input
           type="password"
@@ -68,6 +74,7 @@ const Login = () => {
           placeholder="סיסמא"
           id="password"
           onChange={handleChange}
+          onKeyDown={handleClick}
         />
         <button type="submit" className="confirmBtn" onClick={handleSubmit}>
           התחבר
