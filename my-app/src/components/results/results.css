@@ -1,12 +1,22 @@
 .resContainer {
     display: flex;
     flex-direction: column;
+    height: 30vh;
+    min-height: max-content;
     direction: rtl;
     gap: 15px;
     padding: 25px;
     background-color: RGB(237, 245, 247);
     border-radius: 20px 20px 0px 0px;
 }
+
+#iconSvg{
+    position: absolute;
+    height: 60px;
+    width: 60px;
+    right: 40px;
+}
+
 .RBICONCONT {
     position: relative;
 }
@@ -15,7 +25,6 @@
     display: flex;
     direction: rtl;
     flex-direction: column;
-    
 }
 
 .RminiInfo {
@@ -56,3 +65,22 @@
 #RminiAddress {
     color: RGB(117, 116, 116);
 }
+
+/* .imgAnimation-enter{
+    transform: translateX(-20%);
+    position: absolute;
+    height: 60px;
+    width: 60px;
+    right: 40px;
+}
+.imgAnimation-enter-active{
+    transform: translateX(-20%);
+    transition: all ease;
+}
+.imgAnimation-exit{
+
+}
+.imgAnimation-exit-active{
+    transform: translateX(20%);
+    transition: all ease;
+} */

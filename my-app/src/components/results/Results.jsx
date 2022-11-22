@@ -2,10 +2,14 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import "./results.css";
+import icon from "../../utils/undraw_web_search_re_efla.svg";
+import { CSSTransition } from "react-transition-group";
+import { useState } from "react";
 
 function Results() {
   const result = useSelector((state) => state.result.res);
   const navigate = useNavigate();
+  const [imgF, setImgF] = useState(false);
 
   const hundleClick = (id) => {
     console.log(id);
@@ -13,7 +17,7 @@ function Results() {
   };
 
   return (
-    <div className="resContainer" style={result.length != 0 ? {}:{visibility: 'hidden'}}>
+    <div className="resContainer">
       {result
         ? result.map((element) => (
             // <div key={element._id} onClick={() => hundleClick(element._id)}
@@ -38,6 +42,16 @@ function Results() {
             </div>
           ))
         : null}
+      {/* <CSSTransition
+        in={imgF}
+        timeout={500}
+        unmountOnExit
+        classNames={"imgAnimation"}
+      >
+        <div onClick={() => setImgF(!imgF)}>
+          <img src={icon} alt="fdsf" id="iconSvg" />
+        </div>
+      </CSSTransition> */}
     </div>
   );
 }

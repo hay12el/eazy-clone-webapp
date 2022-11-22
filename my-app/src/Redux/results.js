@@ -5,7 +5,7 @@ const initialState = {
 };
 
 export const resSlice = createSlice({
-  name: "user",
+  name: "results",
   initialState,
   reducers: {
     SetRes: (state, action) => {

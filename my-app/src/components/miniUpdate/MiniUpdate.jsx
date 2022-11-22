@@ -14,9 +14,9 @@ function MiniUpdate(props) {
     }
   };
   return (
-    <div className="BBContainer">
+    <div className="BBContainer" style={{border: '2px solid #00A1D6', margin: '10px 0px 10px 0px', borderRadius: '5px', padding: '15px'}}>
       <div className="photos">
-        <Photos photos={business.photos} />
+        {/* <Photos photos={business.photos} /> */}
       </div>
       <div className="info">
         <div className="miniInfo">

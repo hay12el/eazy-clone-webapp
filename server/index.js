@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const tokenVerify = require("./verifyToken/token");
 var bodyParser = require('body-parser')
+const task = require('./scheduledTasks/cron');
 
 const app = express()
 

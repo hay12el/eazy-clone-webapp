@@ -22,7 +22,7 @@ router.get('/login', async (req, res) => {
             else {
                 jwt.sign({ _id: user._id },
                     process.env.secretKey,
-                    { expiresIn: "10000" },
+                    { expiresIn: "10m" },
                     (err, token) => {
                         if (err) {
                             res.sendStatus(403);

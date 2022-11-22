@@ -1,11 +1,9 @@
 .UpdateContainer {
-    border: 2px solid RGB(0, 161, 214);
-    border-radius: 5px;
     display: flex;
     justify-content: center;
     align-items: center;
     width: 80%;
-    min-height: min-content;
+    min-height: max-content;
     flex-direction: column;
     margin: 10px;
 }

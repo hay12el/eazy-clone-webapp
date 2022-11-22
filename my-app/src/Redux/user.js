@@ -14,13 +14,14 @@ export const userSlice = createSlice({
       state.token = action.payload.token;
       state.userName = action.payload.userName;
       state.isAuth = true;
-      state.isAdmin = action.payload.isAdmin = action.payload.isAdmin;
+      state.isAdmin = true;
     },
     LOGOUT: (state) => {
       state.token = null;
       state.userName = undefined;
       state.isAuth = false;
       state.isAdmin = false;
+      localStorage.clear();
     },
   },
 });

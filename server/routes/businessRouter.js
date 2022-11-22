@@ -29,7 +29,7 @@ router.get("/getBbyName", async (req, res) => {
   const { name, city } = req.query;
   try {
     const businesses = await Business.find(
-      { BName: name, city: city },
+      { "BName": name, "city":{$regex: `.*${city}.*`,$options: 'si'} },
       {
         photos: 0,
         email: 0,
@@ -57,19 +57,35 @@ router.post("/newB", tokenVerify.verifyToken, async (req, res) => {
 });
 
 /// get all the businesses related to specific admin
-router.get('/adminBusinesses', async(req, res) => {
+router.get("/adminBusinesses", tokenVerify.verifyToken ,async (req, res) => {
   try {
-    const businesses = await Business.find({owner: req.query.adminId});
-    if(!businesses){
-      res.send({messege:"no businesses"}).status(404);
-    }
-    else{
+    const businesses = await Business.find({ owner: req.query.adminId });
+    if (!businesses) {
+      res.send({ messege: "no businesses" }).status(404);
+    } else {
       res.send(businesses).status(200);
     }
-  }catch(err) {
+  } catch (err) {
     console.log(err);
   }
-})
+});
+
+
+router.get("/BusiByCategoty", async (req, res) => {
+  try {
+    const businesses = await Business.find({
+      type: req.query.type,
+      city: req.query.city,
+    });
+    if (!businesses) {
+      res.status(400);
+    } else {
+      res.send(businesses).status(200);
+    }
+  } catch (err) {
+    console.log(err);
+  }
+});
 
 //636547e665337af5153a90be
 module.exports = router;

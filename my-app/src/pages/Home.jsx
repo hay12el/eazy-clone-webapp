@@ -1,6 +1,7 @@
 import ChooseIcon from "../components/chooseIcon/ChooseIcon";
 import Header from "../components/header/Header";
 import Results from "../components/results/Results";
+import Footer from "../components/footer/Footer";
 
 const Home = () => {
   return (
@@ -12,10 +13,11 @@ const Home = () => {
       >
         <ChooseIcon text="מניקור" />
         <ChooseIcon text="תסרוקות" />
-        <ChooseIcon text="תספורות" />
+        <ChooseIcon text="מספרה" />
         <ChooseIcon text="שיזוף" />
       </div>
       <Results />
+      {/* <Footer /> */}
     </>
   );
 };

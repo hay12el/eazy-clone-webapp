@@ -13873,12 +13873,10 @@ const s = [
   },
 ];
 
-const newCities = s.map((x) => ({'name': x.name}));
-
-console.log(newCities);
+const newCities = s.map((x) => ( x.name ));
 
 const fs = require("fs");
 fs.writeFile("cities.json", JSON.stringify(newCities), function (err) {
   if (err) throw err;
-  console.log("complete");
+  console.log();
 });

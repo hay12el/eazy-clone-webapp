@@ -5,41 +5,34 @@ import axios from "axios";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { SetRes } from "../../Redux/results";
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
+import cities from "../../cities.json";
 
 const Header = () => {
   const dispatch = useDispatch();
-  const [city_data, setCity_data] = useState([]);
+  const [city, setCity] = useState("");
   const inpRef = useRef();
-  const [is, setIs] = useState('hidden');
+  const [is, setIs] = useState("hidden");
 
-  const click1 = (e) => {
-    if (e.key === "Enter") {
-      
-      is === 'hidden' ? setIs('visible') : setIs('hidden');
-    }
-  }
-  const click = async () => {
-    const res = await axios.get(
-      `http://localhost:4000/business/getBbyName?name=${inpRef.current.value}&city=תל אביב`
-    );
-    dispatch(SetRes(res.data.businesses));
-    console.log(res.data.businesses);
+  const hundleChange = (e) => {
+    console.log(e.target.value);
+    setCity(e.target.value);
   };
 
   const hundleEnter = async (e) => {
     if (e.key === "Enter") {
-      is === 'hidden' ? setIs('visible') : setIs('hidden');
+      is === "hidden" ? setIs("visible") : setIs("hidden");
       const res = await axios.get(
-        `http://localhost:4000/business/getBbyName?name=${e.target.value}&city=תל אביב`
+        `http://localhost:4000/business/getBbyName?name=${e.target.value}&city=${city}`
       );
       dispatch(SetRes(res.data.businesses));
     }
   };
   return (
     <div className="hContainer">
-      <div className="text">כל מה שסביבך</div>
-      
+      <div className="text">
+        כל מה שסביבך
+      </div>
 
       <div className="pass">
         <div className="inpContainter">
@@ -60,11 +53,24 @@ const Header = () => {
           <div onClick={() => console.log("ok")} className="lBtn">
             שינוי למיקום נוכחי
           </div>
-
-          <div className="lBtn"> תל אביב יפו</div>
-          {/* <div className="lBtn">
-            <input list="cities-data" id="city-choice" name="city-choice" />
-          </div> */}
+          <select
+            name="city"
+            id="city"
+            className="lBtn"
+            onChange={hundleChange}
+            style={{
+              direction: "rtl",
+              backgroundColor: "inherit",
+              color: "white",
+              border: "none",
+            }}
+          >
+            {cities.cities.map((x) => (
+              <option key={x} value={x} style={{ color: "black" }}>
+                {x}
+              </option>
+            ))}
+          </select>
         </div>
       </div>
     </div>

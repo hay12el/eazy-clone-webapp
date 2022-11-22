@@ -1,10 +1,10 @@
 import React from "react";
 import { useState } from "react";
 import "./addingB.css";
-// import cities from "../cities";
+import cities from "../../cities.json";
+import { useRef } from "react";
 
 function AddingB(props) {
-  const [options, setOptions] = useState([]);
 
   return (
     <div className="AddingContainer" style={{ display: props.visi }}>
@@ -47,12 +47,11 @@ function AddingB(props) {
           <p>כתובת העסק:</p>
           <div className="double">
             <p>עיר:</p>
-            {/* <input type="text" id="city" /> */}
-            <select name="cars" id="city">
-              <option value="volvo">Volvo</option>
-              <option value="saab">Saab</option>
-              <option value="mercedes">Mercedes</option>
-              <option value="audi">Audi</option>
+ 
+            <select name="city" id="city">
+              {
+                cities.cities.map(x => <option key={x} value={`${x}`}>{x}</option>)
+              }
             </select>
           </div>
           <div className="double">

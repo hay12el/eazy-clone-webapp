@@ -1,0 +1,7 @@
+.FooContainer {
+    position:static;
+    bottom: 0;
+    background-color: rgb(232, 106, 106);
+    height: 30px;
+    width: 100%;
+}
