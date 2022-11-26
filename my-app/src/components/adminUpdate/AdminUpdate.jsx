@@ -19,9 +19,6 @@ function AdminUpdate(props) {
         const res = await axios.get(
           `http://localhost:${process.env.REACT_APP_URL}/business/adminBusinesses/`,
           {
-            params: { 
-              adminId: "631a2a424d717b7c88c0227b" 
-            } ,
             headers:{
               token: user.token,
             }
@@ -44,8 +41,8 @@ function AdminUpdate(props) {
 
   return (
     <div className="UpdateContainer" style={{ display: props.visi }}>
-      {businesses.map((b) => (
-        <MiniUpdate business={b} />
+      {businesses.map((b, index) => (
+        <MiniUpdate key={index} business={b} />
       ))}
     </div>
   );

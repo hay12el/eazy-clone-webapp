@@ -59,9 +59,11 @@ router.post("/newB", tokenVerify.verifyToken, async (req, res) => {
 /// get all the businesses related to specific admin
 router.get("/adminBusinesses", tokenVerify.verifyToken ,async (req, res) => {
   try {
-    const businesses = await Business.find({ owner: req.query.adminId });
+    const businesses = await Business.find({ owner: req.adminId });
     if (!businesses) {
+      console.log("no businesses");
       res.send({ messege: "no businesses" }).status(404);
+
     } else {
       res.send(businesses).status(200);
     }

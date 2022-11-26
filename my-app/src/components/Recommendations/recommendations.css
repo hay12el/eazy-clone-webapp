@@ -1,0 +1,27 @@
+.recoContainer{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
+    flex-wrap: wrap;
+    direction: rtl;
+    gap: 10px;
+    padding: 10px;
+    background-color: RGB(237, 245, 247);
+}
+
+.recoCont > p {
+    display: flex;
+    justify-content: center;
+    background-color: RGB(237, 245, 247);
+    margin-bottom: 0px;
+    margin-top: 0px;
+    border-radius: 10px 10px 0px 0px;
+    font-weight: bold;
+}
+
+.recoCont {
+    display: flex;
+    flex-direction: column;
+}
+

@@ -1,8 +1,8 @@
 .resContainer {
     display: flex;
     flex-direction: column;
-    height: 30vh;
-    min-height: max-content;
+    height: auto;
+    min-height: 30vh;
     direction: rtl;
     gap: 15px;
     padding: 25px;
@@ -66,21 +66,3 @@
     color: RGB(117, 116, 116);
 }
 
-/* .imgAnimation-enter{
-    transform: translateX(-20%);
-    position: absolute;
-    height: 60px;
-    width: 60px;
-    right: 40px;
-}
-.imgAnimation-enter-active{
-    transform: translateX(-20%);
-    transition: all ease;
-}
-.imgAnimation-exit{
-
-}
-.imgAnimation-exit-active{
-    transform: translateX(20%);
-    transition: all ease;
-} */

@@ -4,7 +4,8 @@ exports.verifyToken = (req, res, next) => {
     const token = req.headers['token'];
     try{
         if(token){
-            jwt.verify(token, process.env.secretKey);
+            const jwtRes = jwt.verify(token, process.env.secretKey);
+            req.adminId = jwtRes._id;
             next();
         }
         else{

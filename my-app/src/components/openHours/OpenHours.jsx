@@ -40,8 +40,8 @@ function OpenHours(props) {
       </div>
       <div className="hoursCont" style={{ visibility: show }}>
         {hour
-          ? hour.map((element) => {
-              return <p>{element}</p>;
+          ? hour.map((element, index) => {
+              return <p key={index}>{element}</p>;
             })
           : null}
       </div>

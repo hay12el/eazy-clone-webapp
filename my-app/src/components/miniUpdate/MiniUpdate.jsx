@@ -30,13 +30,13 @@ function MiniUpdate(props) {
           <div className="miniInfoLeft">
             <p id="BName">{business.BName}</p>
             <p id="miniDesc">{business.type}</p>
-            <p id="miniAddress" contenteditable="true">
+            <p id="miniAddress" contentEditable="true">
               {business.city} , {business.street}
             </p>
           </div>
         </div>
         <OpenHours hours={business.hours} />
-        <p id="description" contenteditable="true">{business.description}</p>
+        <p id="description" contentEditable="true">{business.description}</p>
         <div className="BIcons">
           <BIcons name={"phone"} link={`tel:${changePhone(business.phone)}`} />
           <BIcons name={"mail"} link={`mailto: ${business.email}`} />
